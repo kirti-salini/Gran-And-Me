@@ -1,0 +1,79 @@
+<%-layout("/layouts/boilerplate")%>
+<body>
+    <div class="row">
+    <div class="col-6 offset-3">
+    <br></br>
+    <h3>Add A New Caregiver</h3>
+    <form method="POST" action="/listings" novalidate class="needs-validation"><!--Bootstrap validation added-->
+        <div class="mb-2"> <%/*It is a comment:mb-3 is bootstrap class and is predefined*/%>
+            <label for="title" class="form-label">Title:</label>
+            <input 
+                name="listing[title]" 
+                placeholder="Add a Catchy Title" 
+                type="text"
+                class="form-control"
+                required
+            />
+            <!--default validation in form of required-->
+            <div class="valid-feedback">Title Looks Good!!</div>
+        </div>
+        <div class="mb-2">
+            <label for="description" class="form-label">Description:</label>
+            <textarea 
+                name="listing[description]" 
+                class="form-control"
+                required
+            ></textarea> <!-- Moved the closing tag here -->
+            <div class="invalid-feedback">Please enter a short description.</div>
+        </div>
+        
+        <div class="mb-2">
+            <label for="image" class="form-label">Image Link:</label>
+            <input 
+                name="listing[image]"
+                placeholder="Enter Image (URL/Link)" 
+                type="text"
+                class="form-control"
+            />
+        </div>
+        <div class="row">
+            <div class="mb-2 col-md-4">
+                <label for="price" class="form-label">Price:</label>
+                <input 
+                    name="listing[price]"
+                    placeholder="In Rupees" 
+                    class="form-control"
+                    required
+                />
+                <div class="invalid-feedback">Price should be valid!!</div>
+            </div>
+            <div class="mb-2 col-md-8">
+                <label for="country" class="form-label">Country:</label>
+                <input 
+                    name="listing[country]"
+                    placeholder="Enter Country" 
+                    type="text"
+                    class="form-control"
+                    required
+                />
+                <div class="invalid-feedback">Country should be valid!!</div>
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label for="location" class="form-label">Location:</label>
+            <input 
+                name="listing[location]"
+                placeholder="Enter Location" 
+                type="text"
+                class="form-control"
+                required
+            />
+            <div class="invalid-feedback">Location should be valid!!</div>
+        </div>
+        <button class="btn btn-dark add-btn">Add</button>
+        <br></br>
+    </form>
+    </div>
+</div>
+</body>

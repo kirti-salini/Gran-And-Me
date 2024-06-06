@@ -1,0 +1,142 @@
+/*Body*/
+body {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    background-color: #eaddcc !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex:1;
+}
+
+/*Nav Bar*/
+.navbar{
+    height:5rem;
+    background-color: #534a45;
+}
+
+.nav-link{
+    color:#eaddcc!important;
+}
+
+/*Footer*/
+
+.f-info-links a {
+    text-decoration: none;
+    color:#222222;
+}
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+.f-info-links,
+.f-info-socials,.f-info-brand{
+    width: 100%;
+    vertical-align: middle;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.f-info-socials i{
+    font-size:1.2rem;
+    margin-right:1rem;
+}
+.f-info{
+    text-align: center;
+    height:6rem; 
+    background-color: #85796d;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* Basic styling for the navbar and icon */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    color: #eaddcc !important; /* Ensure the color is applied */
+}
+
+.navbar-brand i {
+    font-size: 28px;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for the icon to scale up slightly */
+.navbar-brand:hover i {
+    transform: scale(1.1); /* Enlarges the icon to draw attention */
+}
+
+/* Optional: Add a shadow effect for a 3D feel */
+.navbar-brand i {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Responsive tweaks (if necessary) */
+@media (max-width: 768px) {
+    .navbar-brand i {
+        font-size: 24px; /* Smaller icon for mobile screens */
+    }
+}
+/*Cards*/
+.listing-card{
+    border:none !important;
+    margin-bottom: 2rem;
+    background-color: #eaddcc !important;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width:100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding:0 !important;
+}
+.card-text p{
+    font-weight: 400;
+}
+/*.card-text b:hover{
+    
+}*/
+.listing-link{
+    text-decoration: none;
+    color:#222222
+}
+
+/*Card OverLeaf*/
+.card-img-overlay:hover{
+    opacity: 0.1;
+    background-color: #eaddcc;
+}
+
+.add-btn{
+    border: null !important;
+    background-color: #534a45 !important;
+}
+.add-btn:hover{
+    background-color:#85796d !important;
+}
+.alert .close {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*Show Page*/
+.show-img{
+    height:30vh;
+}
+.btns{
+    display:flex;
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
