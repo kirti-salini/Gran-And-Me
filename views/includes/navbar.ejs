@@ -12,8 +12,16 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/listings">All Listings</a>
-          <a class="nav-link" href="/listings/new">Add new Listings</a>
+          <a class="nav-link" href="/listings">All Caregivers</a>
+          <a class="nav-link" href="/listings/new">Add a Caregiver</a>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <%if(!currUser){%>
+          <a class="nav-link" href="/signup">Sign Up</a>
+          <a class="nav-link" href="/login">Log in</a>
+          <%}%><%if(currUser){%>
+          <a class="nav-link" href="/logout">Log out</a>
+          <%}%>
         </div>
       </div>
     </div>

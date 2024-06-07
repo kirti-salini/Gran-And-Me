@@ -14,8 +14,13 @@ router.post("/signup",wrapAsync(async(req,res)=>{
         const newUser=new User({email,username});
         const registeredUser=await User.register(newUser,password);
         console.log(registeredUser);
-        req.flash("success","Welcome to Gran & Me!!");
-        res.redirect("/listings");
+        req.login(registeredUser,(err)=>{
+            if(err){
+                return next(err);
+            }
+            req.flash("success","Welcome to Gran & Me!!");
+            res.redirect("/listings");
+        });
     }catch(e){//vimp see video here day 50 video 10
         req.flash("error",e.message);
         res.redirect("/signup");
@@ -32,5 +37,15 @@ router.post("/login",passport.authenticate("local",{failureRedirect:'/login',fai
     req.flash("success","Welcome Back to Gran & Me!! You are now logged in!!");
     res.redirect("/listings");
 })
+// Logout route
+router.get("/logout", (req, res, next) => {
+    req.logout((err) => {
+        if (err) {
+            return next(err);
+        }
+        req.flash("success", "You are now logged out!!");
+        res.redirect("/listings"); // Redirect to the desired route after logging out
+    });
+});
 
 module.exports=router;
