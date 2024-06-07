@@ -1,6 +1,6 @@
 # Project-Gran & Me
 
-Project-Gran & Me is a Full Stack Project developed using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It serves as a platform for providing caregiver services.
+Project-Gran & Me is a Full Stack Project developed using the MERN Develpoment. It serves as a platform for providing caregiver services.
 
 ## Features
 
@@ -32,8 +32,6 @@ Project-Gran & Me is a Full Stack Project developed using the MERN (MongoDB, Exp
    cd Project-GranAndMe
 
 2. **Install dependencies:**
-bash
-Copy code
 npm install
 
 3. **Set up environment variables:**
@@ -41,8 +39,6 @@ Create a .env file in the root directory
 Define environment variables such as database connection URL, API keys, etc.
 
 4. **Run the application:**
-bash
-Copy code
 npm start
 
 ## Usage
