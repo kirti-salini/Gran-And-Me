@@ -11,6 +11,10 @@ const reviewSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now // Pass the function reference, not the result of calling it
+    },
+    author:{
+        type:Schema.Types.ObjectId,
+        ref:"User"
     }
 });
 

@@ -1,121 +1,90 @@
 const sampleListings = [
-    {
-      title: "Cozy Beachfront Cottage",
-      description:
-        "Escape to this charming beachfront cottage for a relaxing getaway. Enjoy stunning ocean views and easy access to the beach.",
-      image: "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      price: 1500,
-      location: "Malibu",
-      country: "United States",
-    },
-    {
-      title: "Modern Loft in Downtown",
-      description:
-        "Stay in the heart of the city in this stylish loft apartment. Perfect for urban explorers!",
-      image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHRyYXZlbHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      price: 1200,
-      location: "New York City",
-      country: "United States",
-    },
-    {
-      title: "Mountain Retreat",
-      description:
-        "Unplug and unwind in this peaceful mountain cabin. Surrounded by nature, it's a perfect place to recharge.",
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      price: 1000,
-      location: "Aspen",
-      country: "United States",
-    },
-    {
-      title: "Historic Villa in Tuscany",
-      description:
-        "Experience the charm of Tuscany in this beautifully restored villa. Explore the rolling hills and vineyards.",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      price: 2500,
-      location: "Florence",
-      country: "Italy",
-    },
-    {
-      title: "Secluded Treehouse Getaway",
-      description:
-        "Live among the treetops in this unique treehouse retreat. A true nature lover's paradise.",
-      image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      price: 800,
-      location: "Portland",
-      country: "United States",
-    },
-    {
-      title: "Beachfront Paradise",
-      description:
-        "Step out of your door onto the sandy beach. This beachfront condo offers the ultimate relaxation.",
-      image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      price: 2000,
-      location: "Cancun",
-      country: "Mexico",
-    },
-    {
-      title: "Rustic Cabin by the Lake",
-      description:
-        "Spend your days fishing and kayaking on the serene lake. This cozy cabin is perfect for outdoor enthusiasts.",
-      image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      price: 900,
-      location: "Lake Tahoe",
-      country: "United States",
-    },
-    {
-      title: "Luxury Penthouse with City Views",
-      description:
-        "Indulge in luxury living with panoramic city views from this stunning penthouse apartment.",
-      image: "https://images.unsplash.com/photo-1622396481328-9b1b78cdd9fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2t5JTIwdmFjYXRpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      price: 3500,
-      location: "Los Angeles",
-      country: "United States",
-    },
-    {
-      title: "Ski-In/Ski-Out Chalet",
-      description:
-        "Hit the slopes right from your doorstep in this ski-in/ski-out chalet in the Swiss Alps.",
-      image: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      price: 3000,
-      location: "Verbier",
-      country: "Switzerland",
-    },
-    {
-      title: "Safari Lodge in the Serengeti",
-      description:
-        "Experience the thrill of the wild in a comfortable safari lodge. Witness the Great Migration up close.",
-      image: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-      price: 4000,
-      location: "Serengeti National Park",
-      country: "Tanzania",
-    },
-    {
-      title: "Historic Canal House",
-      description:
-        "Stay in a piece of history in this beautifully preserved canal house in Amsterdam's iconic district.",
-      image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtcGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      price: 1800,
-      location: "Amsterdam",
-      country: "Netherlands",
-    },
-    {
-      title: "Private Island Retreat",
-      description:
-        "Have an entire island to yourself for a truly exclusive and unforgettable vacation experience.",
-      image: "https://images.unsplash.com/photo-1618140052121-39fc6db33972?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9kZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-      price: 10000,
-      location: "Fiji",
-      country: "Fiji",
-    },
-    {
-      title: "Charming Cottage in the Cotswolds",
-      description:
-        "Escape to the picturesque Cotswolds in this quaint and charming cottage with a thatched roof.",
-      image: "https://images.unsplash.com/photo-1602088113235-229c19758e9f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWxzJTIwY290dGFnZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-      price: 1300,
-      location: "Cotswolds",
-      country: "United Kingdom",
-    }
+     {
+    title: 'Anjali Kumari, Licensed Physical Therapist',
+    description: 'Specializes in physical rehabilitation and post-surgical recovery, focusing on elderly patients. Over 12 years of experience in various healthcare settings.\r\n' +
+      '            \r\n' +
+      '            ',
+    image: 'https://t4.ftcdn.net/jpg/05/00/43/17/360_F_500431770_2lKBDeRtclz26vbaaIddDXc4pKdYo2Wa.jpg',
+    price: 1000,
+    location: 'Delhi, Delhi',
+    country: 'India'
+  },
+  {
+    title: 'Priya Malhotra, Professional In-Home Nurse',
+    description: 'Registered nurse providing in-home care for chronically ill patients, with expertise in managing medications, wound care, and daily medical routines.\r\n' +
+      '            ',
+    image: 'https://t4.ftcdn.net/jpg/04/33/00/51/360_F_433005115_s06ud3ewiAQsHjSkX8AbG19ON651hpnQ.jpg',
+    price: 1200,
+    location: 'Kolkata, West Bengal',
+    country: 'India'
+  },
+  {
+    title: 'Akash Singh, Certified Dementia Care Specialist',
+    description: 'Certified to work with dementia patients, focusing on creating a supportive environment that adapts to the needs of individuals with memory loss.',
+    image: 'https://i.ytimg.com/vi/rHC5QlAVlk0/maxresdefault.jpg',
+    price: 900,
+    location: 'Chennai, Tamil Nadu',
+    country: 'India'
+  },
+  {
+    title: 'Ravi Gupta, Specialized Elder Caregiver',
+    description: ' Dedicated to providing compassionate care for elderly patients, specializing in mobility assistance and daily living activities. With 10 years of experience, Ravi is known for his patience and attentiveness.',
+    image: 'https://qph.cf2.quoracdn.net/main-qimg-b4ea9b0d8bc55d78e6bb9f31a7eda340-lq',
+    price: 850,
+    location: 'Pune, Maharashtra',
+    country: 'India'
+  },
+  {
+    title: 'Lakshmi Reddy, Pediatric Nurse',
+    description: 'Certified pediatric nurse with a focus on providing medical care to children from infancy through adolescence. Lakshmi offers home visits and is skilled in managing acute and chronic conditions in young patients.',
+    image: 'https://childrensheartlink.org/wp-content/uploads/2020/03/Hamalatha-and-baby1-1024x681.jpg',
+    price: 950,
+    location: 'Hyderabad, Telangana',
+    country: 'India'
+  },
+  {
+    title: 'Rohit Patel, Home Healthcare Aide',
+    description: 'Rohit assists patients with daily activities, medication management, and light household duties. He is particularly skilled in caring for post-operative patients and those undergoing rehabilitation.',
+    image: 'https://techcrunch.com/wp-content/uploads/2015/09/portea-provides-home-healthcare-across-24-cities-in-india-and-4-in-malaysia.jpg?w=1024',
+    price: 700,
+    location: 'Ahmedabad, Gujarat',
+    country: 'India'
+  },
+  {
+    title: 'Manoj Choudhary, Hospice Care Specialist',
+    description: ' Manoj provides end-of-life care with dignity and respect, ensuring comfort and support not only for the patient but also for their families. His empathetic approach and experience in palliative care make him a valued caregiver.\r\n' +
+      '            ',
+    image: 'https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F535S16a/MediaObjects/41586_2016_Article_BF535S16a_Figa_HTML.jpg',
+    price: 1100,
+    location: 'Jaipur, Rajasthan',
+    country: 'India'
+  },
+  {
+    title: 'Suresh Kumar, Disability Support Worker',
+    description: 'Specializing in caring for individuals with physical and intellectual disabilities, Suresh adapts environments and activities to meet individual needs, promoting independence and inclusion.',
+    image: 'https://bl-i.thgim.com/public/opinion/7pa0kh/article25040699.ece/alternates/FREE_1200/BL26THINK2RAMP1',
+    price: 800,
+    location: 'Coimbatore, Tamil Nadu',
+    country: 'India'
+  },
+  {
+    title: 'Divya Sharma, Mental Health Nurse',
+    description: 'Divya is a trained mental health nurse who provides support and care to patients dealing with mental health issues, offering therapy sessions and crisis intervention in home settings.',
+    image: 'https://www.povertyactionlab.org/sites/default/files/styles/full_evaluation_image/public/2023-04/Evaluation%202624_Indian-nurse-examining-patient_shutterstock.jpg?itok=QCOYaTp0',
+    price: 1000,
+    location: 'Kolkata, West Bengal',
+    country: 'India'
+  },
+  {
+    title: 'Sunita Das, Experienced Childcare Provider',
+    description: 'Loving and reliable nanny with 8 years of experience with newborns and toddlers. Trained in early childhood development and emergency response.\r\n' +
+      '            ',
+    image: 'https://www.shutterstock.com/image-photo/mother-child-rural-village-salunkwadi-600nw-577285297.jpg',
+    price: 750,
+    location: ' Bangalore, Karnataka',
+    country: 'India'
+  }
+
   ];
   
   module.exports = { data: sampleListings };
