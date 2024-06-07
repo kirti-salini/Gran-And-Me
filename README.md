@@ -1,38 +1,54 @@
 # Project-Gran & Me
 
-Project-Gran & Me is a Full Stack project developed using MERN (MongoDB, Express.js, React.js, Node.js) stack. It serves as a platform for providing caregiver services.
+Project-Gran & Me is a Full Stack Project developed using the MERN (MongoDB, Express.js, React.js, Node.js) stack. It serves as a platform for providing caregiver services.
 
 ## Features
 
-- **Frontend Technologies:** HTML5, CSS3, JavaScript
-- **Backend Technologies:** Node.js, Express.js
-- **Database:** MongoDB
-- **Framework:** Bootstrap
-- **Other Technologies:** MVC Framework, REST APIs, AJAX
+- **Frontend:**
+  - HTML5 / CSS3 / JavaScript
+  - Utilizes Bootstrap framework for responsive design
+  
+- **Backend:**
+  - Node.js
+  - Express.js
+  - EJS (Embedded JavaScript) for server-side templating
+  
+- **Database:**
+  - MongoDB for data storage
+  
+- **Framework:**
+  - Bootstrap
+  
+- **Other:**
+  - Implements MVC (Model-View-Controller) framework for better organization and maintainability
+  - Utilizes REST APIs for communication between frontend and backend
+  - Utilizes AJAX for asynchronous data exchange
+  
+## Setup
 
-## Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/kirti-salini/Gran-And-Me.git
+   cd Project-GranAndMe
 
-1. Clone the repository:
+2. **Install dependencies:**
+bash
+Copy code
+npm install
 
-    ```bash
-    git clone https://github.com/your_username/project-gran-and-me.git
-    ```
+3. **Set up environment variables:**
+Create a .env file in the root directory
+Define environment variables such as database connection URL, API keys, etc.
 
-2. Install dependencies:
-
-    ```bash
-    cd project-gran-and-me
-    npm install
-    ```
-
-3. Set up MongoDB:
-
-    - Install MongoDB locally or use a cloud-based service.
-    - Update the MongoDB connection string in the appropriate configuration file.
+4. **Run the application:**
+bash
+Copy code
+npm start
 
 ## Usage
 
-To start the application, run:
+Access the application through your web browser by navigating to http://localhost:PORT (replace PORT with the port number specified in your environment variables or default port)
 
-```bash
-npm start
+## Contributing
+
+Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or create a pull request.
