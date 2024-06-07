@@ -43,8 +43,7 @@ npm start
 
 ## Usage
 
-Access the application through your web browser by navigating to http://localhost:PORT (replace PORT with the port number specified in your environment variables or default port)
-
+Access the application through your web browser by navigating to http://localhost:PORT
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or create a pull request.
