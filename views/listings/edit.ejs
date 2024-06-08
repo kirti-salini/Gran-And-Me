@@ -4,7 +4,7 @@
         <div class="col-6 offset-3">
         <br></br>
     <h3>Edit Data</h3>
-    <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation">
+    <form method="POST" action="/listings/<%=listing._id%>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
         <div class="mb-2"> <%/*It is a comment:mb-3 is bootstrap class and is predefined*/%>
             <label for="title" class="form-label">Title:</label>
             <input 
@@ -25,15 +25,16 @@
             <div class="invalid-feedback">Please enter a short description.</div>
         </div>
         <div class="mb-2">
-            <label for="image" class="form-label">Image Link:</label>
+           Original Image<br/>
+           <img src="<%=originalImageUrl%>"/>
+        </div>
+        <div class="mb-2">
+            <label for="image" class="form-label">Upload New Image:</label>
             <input 
                 name="listing[image]"
-                value="<%=listing.image%>"
-                type="text"
+                type="file"
                 class="form-control"
-                required
             />
-            <div class="invalid-feedback">Link should be valid!!</div>
         </div>
         <div class="mb-2">
             <label for="mobileno" class="form-label">Mobile No:</label>

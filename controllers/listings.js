@@ -23,11 +23,14 @@ module.exports.showListing=async(req,res)=>{
 module.exports.createListing=async(req,res,next)=>{
     //let {title,description,image,price,country,location}=req.body;
     //let listing=req.body.listing;
+    let url=req.file.path;
+    let filename=req.file.filename;
     if(!req.body.listing){//if trying to access listing that does'nt exist
       throw new ExpressError(400,"Send valid data for listing");
     }
       const newListing=new Listing(req.body.listing);   
       newListing.owner=req.user._id;
+      newListing.image={url,filename};
       await newListing.save();
       req.flash("success","New Caregiver Added!!")
       res.redirect("/listings");
@@ -40,12 +43,22 @@ module.exports.renderEditForm=async(req,res)=>{
       req.flash("error","Caregiver does not exist!!");
       res.redirect("/listings");
     }
-    res.render("listings/edit.ejs",{listing});
+    //for image preview for edit
+    let originalImageUrl=listing.image.url;
+    originalImageUrl=originalImageUrl.replace("/upload","/upload/w_250");//w_250 to reduce height of image in below upload section 
+    res.render("listings/edit.ejs",{listing,originalImageUrl});
   };
 
   module.exports.updateListing=async(req,res)=>{
     let {id}=req.params;
-    await Listing.findByIdAndUpdate(id,{...req.body.listing});
+    let listing=await Listing.findByIdAndUpdate(id,{...req.body.listing});
+    
+    if(typeof req.file!=="undefined"){//works only incase a new file is uploaded else previous image stays
+    let url=req.file.path;
+    let filename=req.file.filename;
+    listing.image={url,filename};
+    await listing.save();
+    }
     req.flash("success","Caregiver Updated!!")
     res.redirect(`/listings/${id}`);
   };

@@ -4,7 +4,7 @@
     <div class="col-6 offset-3">
     <br></br>
     <h3>Add A New Caregiver</h3>
-    <form method="POST" action="/listings" novalidate class="needs-validation"><!--Bootstrap validation added-->
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data"><!--Bootstrap validation added-->
         <div class="mb-2"> <%/*It is a comment:mb-3 is bootstrap class and is predefined*/%>
             <label for="title" class="form-label">Title:</label>
             <input 
@@ -26,15 +26,14 @@
             ></textarea> <!-- Moved the closing tag here -->
             <div class="invalid-feedback">Please enter a short description.</div>
         </div>
-        
         <div class="mb-2">
-            <label for="image" class="form-label">Image Link:</label>
+            <label for="image" class="form-label">Upload Image:</label>
             <input 
                 name="listing[image]"
-                placeholder="Enter Image (URL/Link)" 
-                type="text"
+                type="file"
                 class="form-control"
             />
+            required
         </div>
         <div class="mb-2">
             <label for="mobileno" class="form-label">Mobile No:</label>
