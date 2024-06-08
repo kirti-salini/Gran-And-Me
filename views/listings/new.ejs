@@ -32,28 +32,19 @@
                 name="listing[image]"
                 type="file"
                 class="form-control"
+                required
             />
-            required
         </div>
         <div class="mb-2">
             <label for="mobileno" class="form-label">Mobile No:</label>
-            <input 
-                name="listing[mobileno]"
-                placeholder="Enter 10 digit Mobile Number" 
-                type="number"
-                class="form-control"
-            />
+            <input name="listing[mobileno]" placeholder="Enter 10 digit Mobile Number" type="number" class="form-control"
+                min="1000000000" max="9999999999" required />
+            <div class="invalid-feedback">Please enter a valid 10 digit Mobile No.</div>
         </div>
         <div class="row">
             <div class="mb-2 col-md-4">
                 <label for="price" class="form-label">Price:</label>
-                <input 
-                    name="listing[price]"
-                    placeholder="In Rupees" 
-                    class="form-control"
-                    required
-                />
-                <div class="invalid-feedback">Price should be valid!!</div>
+                <input name="listing[price]" placeholder="In Rupees" type="number" class="form-control" required />
             </div>
             <div class="mb-2 col-md-8">
                 <label for="country" class="form-label">Country:</label>

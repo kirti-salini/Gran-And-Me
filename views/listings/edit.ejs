@@ -25,7 +25,7 @@
             <div class="invalid-feedback">Please enter a short description.</div>
         </div>
         <div class="mb-2">
-           Original Image<br/>
+           <b><i>Original Image:<br /></i></b>
            <img src="<%=originalImageUrl%>"/>
         </div>
         <div class="mb-2">
@@ -38,14 +38,9 @@
         </div>
         <div class="mb-2">
             <label for="mobileno" class="form-label">Mobile No:</label>
-            <input 
-                name="listing[mobileno]"
-                value="<%=listing.mobileno%>"
-                type="number"
-                class="form-control"
-                required
-            />
-            <div class="invalid-feedback">Link should be valid!!</div>
+            <input name="listing[mobileno]" value="<%=listing.mobileno%>" type="number" class="form-control"
+                min="1000000000" max="9999999999" required />
+            <div class="invalid-feedback">Please enter a valid 10 digit Mobile No.</div>
         </div>
         <div class="row">
             <div class="mb-2 col-md-4">
@@ -57,7 +52,6 @@
                     class="form-control"
                     required
                 />
-                <div class="invalid-feedback">Price should be valid!!</div>
             </div>
             <div class="mb-2 col-md-8">
                 <label for="country" class="form-label">Country:</label>
