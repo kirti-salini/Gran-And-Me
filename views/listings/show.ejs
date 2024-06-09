@@ -1,6 +1,7 @@
 <%- layout("/layouts/boilerplate") %>
 <script>
     const mapToken= "<%=process.env.MAP_TOKEN%>";
+    const listing = <%-JSON.stringify(listing)%>;
 </script>
 <div class="container mt-3"> <!-- Added mt-5 class for top margin -->
     <div class="row">
@@ -12,7 +13,7 @@
             <div class="card-img-overlay"></div>
             <div class="card-body">
                 <p class="card-text">
-                    <p><b>Posted By:</b><i><%= listing.owner.username %></i></p>
+                    <p><b>Posted By:</b><i>@<%= listing.owner.username %></i></p>
                     <p><b>About:</b><%= listing.description %></p>
                     <p><b>Price:</b>&#8377;<%= listing.price.toLocaleString("en-IN") %>/day</p>
                     <p><b>Mobile Number:</b>+91-<%= listing.mobileno %></p>
@@ -82,7 +83,7 @@
             <% } %>
         </div>
         <div class="col-8 offset-3 mb-3">
-            <h3>Caregiver's Location</h3>
+            <h3>Caregiver's Location:</h3>
             <div id="map"></div>
         </div>
     </div>

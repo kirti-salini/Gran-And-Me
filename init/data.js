@@ -1,5 +1,5 @@
 const sampleListings = [
-     {
+  {
     title: 'Anjali Kumari, Licensed Physical Therapist',
     description: 'Specializes in physical rehabilitation and post-surgical recovery, focusing on elderly patients. Over 12 years of experience in various healthcare settings.\r\n' +
       '            \r\n' +
@@ -8,9 +8,14 @@ const sampleListings = [
       filename:"listingimage",
       url: 'https://t4.ftcdn.net/jpg/05/00/43/17/360_F_500431770_2lKBDeRtclz26vbaaIddDXc4pKdYo2Wa.jpg',
     },
+    mobileno: 9876543210,
     price: 1000,
     location: 'Delhi, Delhi',
-    country: 'India'
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [77.2090, 28.6139] // Example coordinates for Delhi
+    }
   },
   {
     title: 'Priya Malhotra, Professional In-Home Nurse',
@@ -20,9 +25,14 @@ const sampleListings = [
         filename:"listingimage",
         url: 'https://t4.ftcdn.net/jpg/04/33/00/51/360_F_433005115_s06ud3ewiAQsHjSkX8AbG19ON651hpnQ.jpg',
     },
+    mobileno: 9123456789,
     price: 1200,
     location: 'Kolkata, West Bengal',
-    country: 'India'
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [88.3639, 22.5726] // Example coordinates for Kolkata
+    }
   },
   {
     title: 'Akash Singh, Certified Dementia Care Specialist',
@@ -31,9 +41,14 @@ const sampleListings = [
       filename:"listingimage",
       url: 'https://i.ytimg.com/vi/rHC5QlAVlk0/maxresdefault.jpg',
     },
+    mobileno: 9234567890,
     price: 900,
     location: 'Chennai, Tamil Nadu',
-    country: 'India'
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [80.2707, 13.0827] // Example coordinates for Chennai
+    }
   },
   {
     title: 'Ravi Gupta, Specialized Elder Caregiver',
@@ -42,9 +57,14 @@ const sampleListings = [
       filename:"listingimage",
       url:'https://qph.cf2.quoracdn.net/main-qimg-b4ea9b0d8bc55d78e6bb9f31a7eda340-lq',
     },
+    mobileno: 9345678901,
     price: 850,
     location: 'Pune, Maharashtra',
-    country: 'India'
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [73.8567, 18.5204] // Example coordinates for Pune
+    }
   },
   {
     title: 'Lakshmi Reddy, Pediatric Nurse',
@@ -53,9 +73,14 @@ const sampleListings = [
       filename:"listingimage",
       url: 'https://childrensheartlink.org/wp-content/uploads/2020/03/Hamalatha-and-baby1-1024x681.jpg',
     },
+    mobileno: 9456789012,
     price: 950,
     location: 'Hyderabad, Telangana',
-    country: 'India'
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [78.4867, 17.3850] // Example coordinates for Hyderabad
+    }
   },
   {
     title: 'Rohit Patel, Home Healthcare Aide',
@@ -64,21 +89,31 @@ const sampleListings = [
       filename:"listingimage",
       url: 'https://techcrunch.com/wp-content/uploads/2015/09/portea-provides-home-healthcare-across-24-cities-in-india-and-4-in-malaysia.jpg?w=1024',
     },
+    mobileno: 9567890123,
     price: 700,
     location: 'Ahmedabad, Gujarat',
-    country: 'India'
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [72.5714, 23.0225] // Example coordinates for Ahmedabad
+    }
   },
   {
     title: 'Manoj Choudhary, Hospice Care Specialist',
     description: ' Manoj provides end-of-life care with dignity and respect, ensuring comfort and support not only for the patient but also for their families. His empathetic approach and experience in palliative care make him a valued caregiver.\r\n' +
       '            ',
-      image:{
-        filename:"listingimage",
-        url: 'https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F535S16a/MediaObjects/41586_2016_Article_BF535S16a_Figa_HTML.jpg',
-      },
-      price: 1100,
+    image:{
+      filename:"listingimage",
+      url: 'https://media.springernature.com/full/springer-static/image/art%3A10.1038%2F535S16a/MediaObjects/41586_2016_Article_BF535S16a_Figa_HTML.jpg',
+    },
+    mobileno: 9678901234,
+    price: 1100,
     location: 'Jaipur, Rajasthan',
-    country: 'India'
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [75.7873, 26.9124] // Example coordinates for Jaipur
+    }
   },
   {
     title: 'Suresh Kumar, Disability Support Worker',
@@ -87,9 +122,14 @@ const sampleListings = [
       filename:"listingimage",
       url: 'https://bl-i.thgim.com/public/opinion/7pa0kh/article25040699.ece/alternates/FREE_1200/BL26THINK2RAMP1',
     },
+    mobileno: 9789012345,
     price: 800,
     location: 'Coimbatore, Tamil Nadu',
-    country: 'India'
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [76.9558, 11.0168] // Example coordinates for Coimbatore
+    }
   },
   {
     title: 'Divya Sharma, Mental Health Nurse',
@@ -98,9 +138,14 @@ const sampleListings = [
       filename:"listingimage",
       url: 'https://www.povertyactionlab.org/sites/default/files/styles/full_evaluation_image/public/2023-04/Evaluation%202624_Indian-nurse-examining-patient_shutterstock.jpg?itok=QCOYaTp0',
     },
+    mobileno: 9890123456,
     price: 1000,
     location: 'Kolkata, West Bengal',
-    country: 'India'
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [88.3639, 22.5726] // Example coordinates for Kolkata
+    }
   },
   {
     title: 'Sunita Das, Experienced Childcare Provider',
@@ -110,12 +155,15 @@ const sampleListings = [
       filename:"listingimage",
       url:'https://www.shutterstock.com/image-photo/mother-child-rural-village-salunkwadi-600nw-577285297.jpg',
     },
+    mobileno: 9901234567,
     price: 750,
-    location: ' Bangalore, Karnataka',
-    country: 'India'
+    location: 'Bangalore, Karnataka',
+    country: 'India',
+    geometry: {
+      type: 'Point',
+      coordinates: [77.5946, 12.9716] // Example coordinates for Bangalore
+    }
   }
+];
 
-  ];
-  
-  module.exports = { data: sampleListings };
-  
+module.exports = { data: sampleListings };
