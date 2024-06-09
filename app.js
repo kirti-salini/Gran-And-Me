@@ -11,6 +11,7 @@ const ejsMate=require("ejs-mate");
 const port = 3030;
 const ExpressError=require("./utils/ExpressError.js");
 const Listing = require('./models/listings.js');
+const Review = mongoose.model('Review');
 const session=require("express-session")
 const flash=require("connect-flash");
 const passport=require("passport");
@@ -74,7 +75,7 @@ app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
 
-// Adding the search route
+// Adding the search route(name,job role or description,location,country)
 app.get('/search', async (req, res) => {
   const query = req.query.q || ''; // Capture the original query
   const searchQuery = query.toLowerCase(); // Use this for the search
@@ -86,7 +87,9 @@ app.get('/search', async (req, res) => {
       results = await Listing.find({
         $or: [
           { title: { $regex: searchQuery, $options: 'i' } },
-          { location: { $regex: searchQuery, $options: 'i' } }
+          { location: { $regex: searchQuery, $options: 'i' } },
+          { description: { $regex: searchQuery, $options: 'i' } },
+          { country: { $regex: searchQuery, $options: 'i' } } // Added country to search criteria
         ]
       });
       console.log('Search Results:', results);
@@ -96,6 +99,38 @@ app.get('/search', async (req, res) => {
   }
   res.render('listings/search-results', { results, query });
 });
+
+//Route for High-Rated filter(Future Scope)
+// app.get('/listings', async (req, res) => {
+//   try {
+//     const fiveStarListings = await Listing.aggregate([
+//       {
+//         $lookup: {
+//           from: 'reviews', // Collection to join with
+//           localField: 'reviews', // Field from the listings collection
+//           foreignField: '_id', // Field from the reviews collection
+//           as: 'allReviews' // Alias for the joined reviews
+//         }
+//       },
+//       {
+//         $addFields: {
+//           averageRating: { $avg: '$allReviews.rating' } // Calculate the average rating for each listing
+//         }
+//       },
+//       {
+//         $match: {
+//           averageRating: 5 // Filter listings with an average rating of 5
+//         }
+//       }
+//     ]);
+
+//     res.render('listings/index', { listings: fiveStarListings }); // Pass the filtered listings to the template
+//   } catch (err) {
+//     console.error('Error fetching listings:', err);
+//     req.flash('error', 'Failed to fetch listings');
+//     res.redirect('/');
+//   }
+// });
 
 
 //A standard response if any path doesnt match
