@@ -48,9 +48,9 @@ const sessionOptions={
   }
 };
 
-app.get("/", (req, res) => {
-  res.send("HI I AM ROOT");
-});
+// app.get("/", (req, res) => {
+//   res.send("HI I AM ROOT");
+// });
 
 app.use(session(sessionOptions));
 app.use(flash());//used it before routes so as it will display in that route, else will not

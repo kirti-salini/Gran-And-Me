@@ -1,13 +1,76 @@
 <%-layout("/layouts/boilerplate")%>
- 
-<body>
-  <div class="mt-4 mb-2">
-    <h3>Caregivers</h3>
-  </div>
+  <style>
+    #filters{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .filter{
+      text-align: center;
+      margin-right: 2rem;
+      margin-top:2rem;
+      opacity:0.7;
+    }
+    .filter:hover{
+      opacity: 1;
+      cursor:pointer;
+    }
+    .filter p{
+      font-size: 0.78rem;
+    }
+    .filter i{
+      font-size: 25px;
+    }
+  </style>
     <!--<form method="GET" action="/listings/new">
         <button>Create New</button>
     </form>-->
-    <div class="row row-cols-lg-3 row-cols-md-2  row-cols-sm-1">
+    <div id="filters">
+      <div class="filter">
+        <div><i class="fa-solid fa-award"></i></div>
+        <p>High-Rated</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-baby"></i></div>
+        <p>Child-Care</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-person-cane"></i></div>
+        <p>Senior-Support</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-brain"></i></div>
+        <p>Behavioral-Assistants</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-house-medical-flag"></i></div>
+        <p>Home-Nurse</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-wheelchair-move"></i></div>
+        <p>Disability-Support</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <p>Hospice-Care</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-person-breastfeeding"></i></div>
+        <p>Postpartum-Doulas</p>
+      </div>
+      <div class="filter">
+        <div><i class="fas fa-heartbeat"></i></div>
+        <p>E-Health</p>
+      </div>
+      <div class="filter">
+        <div><i class="fas fa-shuttle-van"></i></div>
+        <p>Journey-Companions</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-book-medical"></i></div>
+        <p>Health-Advocates</p>
+      </div>
+    </div>
+    <div class="row row-cols-lg-3 row-cols-md-2  row-cols-sm-1 mt-3">
         <% for(let listing of alllistings){ %>
             <a href="/listings/<%=listing._id%>" class="listing-link">
             <div class="card col listing-card" >
@@ -23,4 +86,3 @@
             <%}%>
             </a>
     </div>
-</body>
