@@ -64,6 +64,7 @@ const sessionOptions={
 };
 
 app.get("/", (req, res) => {
+  res.locals.currUser = req.user;
    res.render("welcome");
 });
 
