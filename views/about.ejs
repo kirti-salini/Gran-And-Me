@@ -1,0 +1,117 @@
+<%- layout("layouts/boilerplate") %>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            /* Light gray background for a softer look */
+        }
+
+        .about-section {
+            padding: 4rem;
+            background: white;
+            /* Makes the content stand out against the gray background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for depth */
+            border-radius: 8px;
+            /* Rounded corners */
+            color: #534a45;
+            /* Darker text for better readability */
+            max-width: 900px;
+            /* Restricts the width of the about section */
+            margin: 2rem auto;
+            /* Centers the section horizontally */
+        }
+
+        .about-section h1,
+        .about-section h2 {
+            color: #534a45;
+            /* A strong blue for headings */
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #85796d;
+            /* Darker gray for paragraph text */
+        }
+
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+
+        .value {
+            width: 30%;
+            text-align: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #eaddcc;
+            /* Light blue background for values */
+            border-radius: 8px;
+            /* Rounded corners for the values boxes */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            /* Soft shadow for depth */
+        }
+
+        .value i {
+            font-size: 3rem;
+            color: #534a45;
+            /* Bright blue for icons to stand out */
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .values {
+                flex-direction: column;
+            }
+
+            .value {
+                width: 80%;
+                margin: 1rem auto;
+                /* Center values in mobile view */
+            }
+        }
+    </style>
+
+    <div class="about-section container mt-4">
+        <h1>About Gran & Me</h1>
+        <p>Welcome to Gran & Me, your trusted source for reliable and compassionate caregivers. We connect families with
+            experienced and caring professionals who can provide support for a variety of needs, from childcare to
+            senior support.</p>
+
+        <h2>Our Mission</h2>
+        <p>At Gran & Me, our mission is to make it easier for families to find trustworthy caregivers who can help with
+            their unique needs. We are dedicated to providing personalized care that respects the dignity and
+            preferences of each individual we serve. Whether you need a few hours of support or 24/7 care, we are here
+            to help.</p>
+
+        <h2>Our Vision</h2>
+        <p>We envision a world where every family has access to high-quality, affordable care that enhances their
+            quality of life. Our goal is to build a community where caregivers and families support each other, ensuring
+            that everyone can thrive.</p>
+
+        <h2>Our Values</h2>
+        <div class="values">
+            <div class="value">
+                <i class="fas fa-heart"></i>
+                <h3>Compassion</h3>
+                <p>We care deeply about the well-being of our clients and their families.</p>
+            </div>
+            <div class="value">
+                <i class="fas fa-handshake"></i>
+                <h3>Trust</h3>
+                <p>We are committed to building strong, trustworthy relationships with our clients and caregivers.</p>
+            </div>
+            <div class="value">
+                <i class="fas fa-user-friends"></i>
+                <h3>Community</h3>
+                <p>We believe in the power of community and strive to create a supportive environment for all.</p>
+            </div>
+        </div>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to learn more about our services, please don't hesitate to get in touch. You
+            can reach us at:</p>
+        <p>Email: support@granandme.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+        </div>

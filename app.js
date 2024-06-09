@@ -100,6 +100,12 @@ app.get('/search', async (req, res) => {
   res.render('listings/search-results', { results, query });
 });
 
+// About Website Route
+app.get('/about', (req, res) => {
+  res.render('about');
+});
+
+
 //Route for High-Rated filter(Future Scope)
 // app.get('/listings', async (req, res) => {
 //   try {
