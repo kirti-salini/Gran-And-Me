@@ -64,7 +64,7 @@ const sessionOptions={
 };
 
 app.get("/", (req, res) => {
-   res.send("welcome");
+   res.render("welcome");
 });
 
 
