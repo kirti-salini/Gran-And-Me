@@ -10,7 +10,7 @@ const methodOverride=require("method-override");
 const ejsMate=require("ejs-mate");
 const port = 3030;
 const ExpressError=require("./utils/ExpressError.js");
-
+const Listing = require('./models/listings.js');
 const session=require("express-session")
 const flash=require("connect-flash");
 const passport=require("passport");
@@ -73,6 +73,30 @@ app.use((req,res,next)=>{
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
+
+// Adding the search route
+app.get('/search', async (req, res) => {
+  const query = req.query.q || ''; // Capture the original query
+  const searchQuery = query.toLowerCase(); // Use this for the search
+  console.log('Search Query:', query);
+
+  let results = [];
+  if (searchQuery) {
+    try {
+      results = await Listing.find({
+        $or: [
+          { title: { $regex: searchQuery, $options: 'i' } },
+          { location: { $regex: searchQuery, $options: 'i' } }
+        ]
+      });
+      console.log('Search Results:', results);
+    } catch (err) {
+      console.error('Error during search:', err);
+    }
+  }
+  res.render('listings/search-results', { results, query });
+});
+
 
 //A standard response if any path doesnt match
 app.all("*",(req,res,next)=>{

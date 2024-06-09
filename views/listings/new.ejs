@@ -6,7 +6,7 @@
     <h3>Add A New Caregiver</h3>
     <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data"><!--Bootstrap validation added-->
         <div class="mb-2"> <%/*It is a comment:mb-3 is bootstrap class and is predefined*/%>
-            <label for="title" class="form-label">Title:</label>
+            <label for="title" class="form-label">Name and Role:</label>
             <input 
                 name="listing[title]" 
                 placeholder="Add a Catchy Title" 
@@ -43,7 +43,7 @@
         </div>
         <div class="row">
             <div class="mb-2 col-md-4">
-                <label for="price" class="form-label">Price:</label>
+                <label for="price" class="form-label">Charges:</label>
                 <input name="listing[price]" placeholder="In Rupees" type="number" class="form-control" required />
             </div>
             <div class="mb-2 col-md-8">

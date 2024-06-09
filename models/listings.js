@@ -35,8 +35,9 @@ const listingSchema = new Schema({
     coordinates: {
       type: [Number], // Array of numbers for [longitude, latitude]
       required: true,
-    }
-  }
+    },
+  },
+  
 });
 
 //Creating middleware to delete all related reviews if any listing is deleted

@@ -6,7 +6,7 @@
 <div class="container mt-3"> <!-- Added mt-5 class for top margin -->
     <div class="row">
         <div class="col-8 offset-3 mb-3">
-            <h3 mt-3><%= listing.title %>:</h3>
+            <h3 mt-3 style="color:#534a45"><%= listing.title %>:</h3>
         </div>
         <div class="card col-6 offset-3 show-card listing-card">
             <img class="card-img-top show-img" src="<%= listing.image.url %>" alt="listing_image"/>
@@ -15,7 +15,7 @@
                 <p class="card-text">
                     <p><b>Posted By:</b><i>@<%= listing.owner.username %></i></p>
                     <p><b>About:</b><%= listing.description %></p>
-                    <p><b>Price:</b>&#8377;<%= listing.price.toLocaleString("en-IN") %>/day</p>
+                    <p><b>Charges:</b>&#8377;<%= listing.price.toLocaleString("en-IN") %>/day</p>
                     <p><b>Mobile Number:</b>+91-<%= listing.mobileno %></p>
                     <p><b>Location:</b><%= listing.location %></p>
                     <p><b>Country:</b><%= listing.country %></p>

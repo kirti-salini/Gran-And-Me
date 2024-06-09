@@ -1,3 +1,30 @@
+
+<style>
+  .search-btn{
+    color:  #534a45;
+    background-color:#eaddcc;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+  }
+  .search-btn:hover{
+    color:  #534a45;
+    background-color:white;
+  }
+  .nav-link{
+    font-size: 15px;
+  }
+  .search-btn i{
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-inp{
+    border-radius: 25px;
+    padding: 0.5rem 1rem 0.5rem 3rem;
+    font-size: 1rem;
+  }
+</style>
+
+
 <nav class="navbar navbar-expand-md  border-bottom sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/listings"><i class="fa-solid fa-shield-heart"></i>
@@ -11,7 +38,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" href="/listings">Caregivers</a>
+          <a class="nav-link" href="/listings">CARE-GIVERS</a>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <form class="d-flex" role="search" action="/search" method="GET">
+            <input class="form-control me-2 search-inp" type="search" placeholder="Find Your Care Angel" name="q">
+            <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </form>
         </div>
         <div class="navbar-nav ms-auto">
           <a class="nav-link" href="/listings/new">Add to Care Team</a>

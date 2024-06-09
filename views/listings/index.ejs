@@ -1,88 +1,132 @@
-<%-layout("/layouts/boilerplate")%>
-  <style>
-    #filters{
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .filter{
-      text-align: center;
-      margin-right: 2rem;
-      margin-top:2rem;
-      opacity:0.7;
-    }
-    .filter:hover{
-      opacity: 1;
-      cursor:pointer;
-    }
-    .filter p{
-      font-size: 0.78rem;
-    }
-    .filter i{
-      font-size: 25px;
-    }
-  </style>
-    <!--<form method="GET" action="/listings/new">
-        <button>Create New</button>
-    </form>-->
-    <div id="filters">
-      <div class="filter">
-        <div><i class="fa-solid fa-award"></i></div>
-        <p>High-Rated</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-baby"></i></div>
-        <p>Child-Care</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-person-cane"></i></div>
-        <p>Senior-Support</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-brain"></i></div>
-        <p>Behavioral-Assistants</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-house-medical-flag"></i></div>
-        <p>Home-Nurse</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-wheelchair-move"></i></div>
-        <p>Disability-Support</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-hand-holding-heart"></i></div>
-        <p>Hospice-Care</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-person-breastfeeding"></i></div>
-        <p>Postpartum-Doulas</p>
-      </div>
-      <div class="filter">
-        <div><i class="fas fa-heartbeat"></i></div>
-        <p>E-Health</p>
-      </div>
-      <div class="filter">
-        <div><i class="fas fa-shuttle-van"></i></div>
-        <p>Journey-Companions</p>
-      </div>
-      <div class="filter">
-        <div><i class="fa-solid fa-book-medical"></i></div>
-        <p>Health-Advocates</p>
-      </div>
+<%- layout("layouts/boilerplate") %>
+<style>
+  #filters-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+  }
+  .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .filter p {
+    font-size: 0.78rem;
+  }
+  .filter i {
+    font-size: 25px;
+  }
+  .extra-info {
+    display: none;
+  }
+  .extra-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 2.5rem;
+    padding: 0.5rem 1rem; 
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 12.5px;
+    background-color: #534a45;
+    color: #eaddcc;
+  }
+  .card-text{
+    color: #534a45;
+    transition: color 0.3s ease;
+  }
+  .card-text:hover{
+    color: black;
+  }
+</style>
+
+<div id="filters-container">
+  <div id="filters">
+    <div class="filter">
+      <div><i class="fa-solid fa-award"></i></div>
+      <p>High-Rated</p>
     </div>
-    <div class="row row-cols-lg-3 row-cols-md-2  row-cols-sm-1 mt-3">
-        <% for(let listing of alllistings){ %>
-            <a href="/listings/<%=listing._id%>" class="listing-link">
-            <div class="card col listing-card" >
-                <img class="card-img-top" src="<%=listing.image.url%>" alt="listing_image" style="height: 20rem;"/>
-                <div class="card-img-overlay"></div>
-                <div class="card-body">
-                  <p class="card-text">
-                    <b><%=listing.title%></b><br>
-                    &#8377;<%=listing.price.toLocaleString("en-IN")%>/day
-                 </p>
-                </div>
-              </div>
-            <%}%>
-            </a>
+    <div class="filter">
+      <div><i class="fa-solid fa-baby"></i></div>
+      <p>Child-Care</p>
     </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-person-cane"></i></div>
+      <p>Senior-Support</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-brain"></i></div>
+      <p>Behavioral-Assistant</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-house-medical-flag"></i></div>
+      <p>Home-Nurse</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-wheelchair-move"></i></div>
+      <p>Disability-Support</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-hand-holding-heart"></i></div>
+      <p>Hospice-Care</p>
+    </div>
+    <div class="filter">
+      <div><i class="fa-solid fa-person-breastfeeding"></i></div>
+      <p>Postpartum-Care</p>
+    </div>
+    <div class="filter">
+      <div><i class="fas fa-heartbeat"></i></div>
+      <p>E-Health</p>
+    </div>
+    <div class="filter">
+      <div><i class="fas fa-shuttle-van"></i></div>
+      <p>Journey-Companion</p>
+    </div>
+  </div>
+
+  <div class="extra-toggle">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Extra Information:</label>
+    </div>
+  </div>
+</div>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+  <% for(let listing of alllistings) { %>
+    <a href="/listings/<%= listing._id %>" class="listing-link">
+      <div class="card col listing-card">
+        <img class="card-img-top" src="<%= listing.image.url %>" alt="listing_image" style="height: 20rem;" />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text" style="color:#534a45">
+            <b><%= listing.title %></b><br>
+            &#8377;<%= listing.price.toLocaleString("en-IN") %>/day<br>
+            <i class="extra-info"><b><u>Working Hours: Daytime only!!</u></b><br>(+25% extra for forced Night Shifts)</i>
+          </p>
+        </div>
+      </div>
+    </a>
+  <% } %>
+</div>
+
+<script>
+  let extraSwitch = document.getElementById("flexSwitchCheckDefault");
+  extraSwitch.addEventListener("click", () => {
+    let extraInfo = document.getElementsByClassName("extra-info");
+    for (let info of extraInfo) {
+      info.style.display = (info.style.display != "inline") ? "inline" : "none";
+    }
+  });
+</script>
