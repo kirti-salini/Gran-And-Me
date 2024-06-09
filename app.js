@@ -63,9 +63,9 @@ const sessionOptions={
   }
 };
 
-// app.get("/", (req, res) => {
-//   res.send("HI I AM ROOT");
-// });
+app.get("/", (req, res) => {
+   res.send('welcome');
+});
 
 
 app.use(session(sessionOptions));
