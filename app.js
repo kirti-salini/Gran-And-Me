@@ -13,6 +13,7 @@ const ExpressError=require("./utils/ExpressError.js");
 const Listing = require('./models/listings.js');
 const Review = mongoose.model('Review');
 const session=require("express-session")
+const MongoStore=require('connect-mongo');
 const flash=require("connect-flash");
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
@@ -20,7 +21,8 @@ const User=require("./models/user.js");
 const listingRouter=require("./routes/listing.js");
 const reviewRouter=require("./routes/review.js");
 const userRouter=require("./routes/user.js");
-const MONGO_URL = "mongodb://127.0.0.1:27017/granandme";
+//const MONGO_URL = "mongodb://127.0.0.1:27017/granandme";
+const dbUrl=process.env.ATLASDB_URL;
 
 main().then(() => {
   console.log("Connected to DB");
@@ -29,7 +31,7 @@ main().then(() => {
 }); 
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect(dbUrl);
 }
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -38,7 +40,20 @@ app.use(methodOverride("_method"));
 app.engine('ejs',ejsMate);//mostly like includes and partials
 app.use(express.static(path.join(__dirname,"/public")))
 
+
+const store=MongoStore.create({
+  mongoUrl:dbUrl,
+  crypto:{
+    secret:"mysupersecretcode",
+  },touchAfter:24*3600,
+});
+
+store.on("error",()=>{
+  console.log("Error in Mongo Session Store",err);
+});
+
 const sessionOptions={
+  store,
   secret:"mysupersecretcode",
   resave:false,
   saveUninitialized:true,
@@ -52,6 +67,7 @@ const sessionOptions={
 // app.get("/", (req, res) => {
 //   res.send("HI I AM ROOT");
 // });
+
 
 app.use(session(sessionOptions));
 app.use(flash());//used it before routes so as it will display in that route, else will not
