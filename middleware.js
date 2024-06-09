@@ -8,7 +8,7 @@ const review = require("./models/review.js");
 module.exports.isLoggedIn=(req,res,next)=>{
     if(!req.isAuthenticated()){
         req.session.redirectUrl=req.originalUrl;
-        req.flash("error","You must be logged in to add a new Caregiver");
+        req.flash("error","You must be logged in first");
         return res.redirect("/login");
       }
       next();
