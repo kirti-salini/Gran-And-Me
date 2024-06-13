@@ -43,7 +43,7 @@ npm start
 
 ## Usage
 
-Access the application through your web browser by navigating to [(https://gran-and-me.onrender.com/listings)]https://gran-and-me.onrender.com/listings
+Access the application through your web browser by navigating to https://gran-and-me.onrender.com/listings
 ## Contributing
 
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or create a pull request.
