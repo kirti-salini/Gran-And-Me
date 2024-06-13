@@ -2,6 +2,9 @@
 
 Project-Gran & Me is a Full Stack Project developed using the MERN Develpoment. It serves as a platform for providing caregiver services.
 
+![service2](https://github.com/kirti-salini/Gran-And-Me/assets/117555508/340e4b4f-773e-40d0-8ba8-4e4b77312776)
+
+
 ## Features
 
 - **Frontend:**
