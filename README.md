@@ -33,7 +33,7 @@ Go Live: https://gran-and-me.onrender.com/listings
 - **Other:**
   - Implements MVC (Model-View-Controller) framework for better organization and maintainability
   - Utilizes REST APIs for communication between frontend and backend
-  - Utilizes AJAX for asynchronous data exchange
+  - Utilizes AJAX for asynchronous data exchange(Future Scope)
   
 ## Setup
 
